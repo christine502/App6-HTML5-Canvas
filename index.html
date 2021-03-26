@@ -42,7 +42,7 @@ alert("This file last modified " + docMod);
 
 function draw_b(){
   	var b_canvas = document.getElementById("b"); // finds the "canvas" element
-	var b_context = b_canvas.getContext("2d");
+	var b_context = b_canvas.getContext("2d"); //retyped
 	b_context.fillRect(50, 25, 150, 100); // draws rectangle with fillStyle gradient
 	var b_grd = ctx.createRadialGradient (115, 95, 5, 90, 70, 80); // creates the gradient dimensions
 	b_grd.addColorStop(0, "pink"); // main color pink
