@@ -41,12 +41,11 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
 var a_canvas = document.getElementById("a"); // for me to find "canvas" element more easily
 
-var b_canvas = document.getElementById("b"); // finds the "canvas" element
-var b_context = b_canvas.getContext("2d");
-var b_grd = ctx.createRadialGradient (115, 95, 5, 90, 70, 80); // creates the gradient dimensions
-
 function draw_rectangle(){
-  	b_grd.addColorStop(0, "pink"); // main color pink
+  	var b_canvas = document.getElementById("b"); // finds the "canvas" element
+	var b_context = b_canvas.getContext("2d");
+	var b_grd = ctx.createRadialGradient (115, 95, 5, 90, 70, 80); // creates the gradient dimensions
+	b_grd.addColorStop(0, "pink"); // main color pink
 	b_grd.addColorStop(1, "white"); // gradients into white
 	ctx.fillStyle = b_grd;
 	b_context.fillRect(50, 25, 150, 100); // draws rectangle with fillStyle gradient
