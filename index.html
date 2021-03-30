@@ -56,7 +56,7 @@ function draw_name(){
 };
 
 function draw_image(){
-	var image_canvas = document.getElementbyId("art");
+	var image_canvas = document.getElementById("art");
 	var image_context = image_canvas.getContext("2d");
 	var image_shoes = new Image();
 	image_shoes.src="https://imgbin.com/png/rfPvf5rS/mens-nike-air-more-uptempo-qs-414962-004-sports-shoes-png";
@@ -64,7 +64,7 @@ function draw_image(){
 };
 
 function clear_rectangle(){
-	var clear_canvas = document.getElementbyId("art");
+	var clear_canvas = document.getElementById("art");
 	var clear_context = clear_canvas.getContext("2d");
 	clear_context.clearRect(0,0, clear_canvas.getWidth(), clear_canvas.getHeight());
 };
