@@ -61,7 +61,7 @@ function draw_image(){
 	var image_context = image_canvas.getContext("2d"); //2-D canvas
 	var image_shoes = new Image();//creating the image in JavaScript
 	image_shoes.src="https://imgbin.com/png/rfPvf5rS/mens-nike-air-more-uptempo-qs-414962-004-sports-shoes-png"; //image png
-	image_shoes.onload = function(){
+	image_shoes.onload = function(){ // onload image into canvas
 	image_context.drawImage(image_shoes, 250, 100); // image dimensions and placement
 	};
 };
