@@ -62,6 +62,12 @@ function draw_image(){
 	image_shoes.src="https://imgbin.com/png/rfPvf5rS/mens-nike-air-more-uptempo-qs-414962-004-sports-shoes-png";
 	image_context.drawImage(shoes, 250, 100);
 };
+
+function clear_rectangle(){
+	var clear_canvas = document.getElementbyId("art");
+	var clear_context = clear_canvas.getContext("2d");
+	clear_context.clearRect(0,0, clear_canvas.getWidth(), clear_canvas.getHeight());
+};
 	
 </script> 
 
@@ -113,6 +119,10 @@ function draw_image(){
 </div>
 
 <a onclick= "draw_image()"; class="w3-btn w3-purple"> Shoes! </a> <!-- button for image to be displayed in canvas -->		
+
+</div>
+
+<a onclick= "clear_rectangle()"; class="w3-btn w3-orange"> Clear! </a> <!-- button to clear canvas -->
 
 </div>
 
