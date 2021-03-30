@@ -44,7 +44,7 @@ function draw_rectangle(){
   	var rectangle_canvas = document.getElementById("art"); // finds the "canvas" element for rectangle
 	var rectangle_context = rectangle_canvas.getContext("2d"); 
 	var my_gradient = rectangle_context.createLinearGradient(50, 25, 150, 100);
-	my_gradient.addColorStop(0, "pink");
+	my_gradient.addColorStop(0, "black");
 	my_gradient.addColorStop(1, "white");
 	rectangle_context.fillStyle = my_gradient;
 	rectangle_context.fillRect(50, 25, 300, 225); //fills rectangle with pink gradient by dimensions
@@ -59,10 +59,11 @@ function draw_name(){
 	name_context.fillText("Christine", 150, 150); // text displayed is "Christine" directly below the rectangle 
 };
 
-window.onload = function draw_image(){
+function draw_image(){
 	var image_canvas = document.getElementbyId("art");
 	var image_context = image_canvas.getContext("2d");
-	var image_shoes = document.getElementbyId("shoes");
+	var image_shoes = new Image();
+	image_shoes.src="https://imgbin.com/png/rfPvf5rS/mens-nike-air-more-uptempo-qs-414962-004-sports-shoes-png";
 	image_context.drawImage(shoes, 250, 100);
 };
 	
@@ -102,13 +103,12 @@ window.onload = function draw_image(){
 
 </div>
 
-<img id="shoes" src="https://imgbin.com/png/rfPvf5rS/mens-nike-air-more-uptempo-qs-414962-004-sports-shoes-png" alt="NIKE shoes" width "50" height "50">
 <canvas id= "art" width="350" height="200" style="border:1px solid #000000;">
 </canvas> <!-- canvas with border -->
 
 </div>
 
-<a onclick="draw_art();" class="w3-btn w3-pink"> Rectangle! </a> <!-- button for solid black rectangle to be displayed in canvas --> 
+<a onclick="draw_rectangle();" class="w3-btn w3-pink"> Rectangle! </a> <!-- button for solid black rectangle to be displayed in canvas --> 
 
 </div>
 
