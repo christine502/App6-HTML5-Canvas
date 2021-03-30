@@ -41,15 +41,19 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 alert("This file last modified " + docMod);
 
 function draw_art(){
-  	var art_canvas = document.getElementById("art"); // finds the "canvas" element
-	var art_context = art_canvas.getContext("2d"); //retyped
-	art_context.fillRect(50, 25, 150, 100); // draws rectangle with fillStyle gradient
-	var art_grd = context.createRadialGradient (115, 95, 5, 90, 70, 80); // creates the gradient dimensions
-	art_grd.addColorStop(0, "pink"); // main color pink
-	art_grd.addColorStop(1, "white"); // gradients into white
-	context.fillStyle = art_grd;
+  	var art_canvas = document.getElementById("art"); // finds the "canvas" element for rectangle
+	var art_context = art_canvas.getContext("2d"); 
+	art_context.fillRect(50, 25, 150, 100); // fills the rectangle with black by dimension
 };
 
+function draw_name(){
+	var name_canvas = document.getElemnetById("name"); //finds the "canvas" element for my name text
+	var name_context = name_canvas.getContext ("2d"); 
+	name_context.font = "12px times-new-roman"; //text font style
+	name_context.textAlign = "left"; //left side of canvas
+	name_context.textBaseline = "bottom"; //bottom of canvas
+	name_context.fillText("(Christine)", 150, 150); // text displayed is "Christine" directly below the rectangle 
+};
 </script>
 
 <style>	
@@ -91,8 +95,11 @@ function draw_art(){
 
 </div>
 
-<a onclick="draw_art();" class="w3-btn w3-pink"> Pretty Rectangle! </a> <!-- button for gradient rectangle to be displayed in canvas
+<a onclick="draw_art();" class="w3-btn w3-pink"> Pretty Rectangle! </a> <!-- button for solid black rectangle to be displayed in canvas --> 
 
+</div>
+
+<a onclick="draw_name()"; class="w3-btn w3-blue"> My Name! </a> <!-- button for my name to be displayed in canvas -->
 </div>
 </body>
 </html>
