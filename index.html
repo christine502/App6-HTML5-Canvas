@@ -43,7 +43,11 @@ alert("This file last modified " + docMod);
 function draw_art(){
   	var art_canvas = document.getElementById("art"); // finds the "canvas" element for rectangle
 	var art_context = art_canvas.getContext("2d"); 
-	art_context.fillRect(50, 25, 150, 100); // fills the rectangle with black by dimension
+	var my_gradient = context.createLinearGradient(50, 25, 150, 100);
+	my_gradient.addColorStop(0, "pink");
+	my_gradient.addColorStop(1, "white");
+	art_context.fillStyle = my_gradient;
+	art_context.fillRect(50, 25, 300, 225); //fills rectangle with pink gradient by dimensions
 };
 
 function draw_name(){
@@ -54,7 +58,15 @@ function draw_name(){
 	name_context.textBaseline = "bottom"; //bottom of canvas
 	name_context.fillText("(Christine)", 150, 150); // text displayed is "Christine" directly below the rectangle 
 };
-</script>
+
+window.onload = function draw_image(){
+	var image_canvas = document.getElementbyId("image");
+	var image_context = image_canvas.getContext ("2d");
+	var image_shoes = document.getElementbyId("shoes");
+	image_context.drawImage(shoes, 250, 100);
+};
+	
+</script> 
 
 <style>	
 
@@ -95,11 +107,19 @@ function draw_name(){
 
 </div>
 
-<a onclick="draw_art();" class="w3-btn w3-pink"> Pretty Rectangle! </a> <!-- button for solid black rectangle to be displayed in canvas --> 
+<a onclick="draw_art();" class="w3-btn w3-pink"> Rectangle! </a> <!-- button for solid black rectangle to be displayed in canvas --> 
 
 </div>
 
 <a onclick="draw_name()"; class="w3-btn w3-blue"> My Name! </a> <!-- button for my name to be displayed in canvas -->
+
+</div>
+
+<img id="shoes" src="https://imgbin.com/png/rfPvf5rS/mens-nike-air-more-uptempo-qs-414962-004-sports-shoes-png" alt="NIKE shoes" width "50" height "50">
+<a onclick= "draw_image()"; class="w3-btn w3-purple"> Shoes! </a> <!-- button for image to be displayed in canvas -->		
+
+</div>
+
 </div>
 </body>
 </html>
