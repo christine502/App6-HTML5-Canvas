@@ -43,7 +43,7 @@ alert("This file last modified " + docMod);
 function draw_art(){
   	var art_canvas = document.getElementById("art"); // finds the "canvas" element for rectangle
 	var art_context = art_canvas.getContext("2d"); 
-	var my_gradient = context.createLinearGradient(50, 25, 150, 100);
+	var my_gradient = art_context.createLinearGradient(50, 25, 150, 100);
 	my_gradient.addColorStop(0, "pink");
 	my_gradient.addColorStop(1, "white");
 	art_context.fillStyle = my_gradient;
@@ -52,16 +52,16 @@ function draw_art(){
 
 function draw_name(){
 	var name_canvas = document.getElementById("name"); //finds the "canvas" element for my name text
-	var name_context = name_canvas.getContext ("2d"); 
+	var name_context = name_canvas.getContext("2d"); 
 	name_context.font = "12px times-new-roman"; //text font style
 	name_context.textAlign = "left"; //left side of canvas
 	name_context.textBaseline = "bottom"; //bottom of canvas
 	name_context.fillText("(Christine)", 150, 150); // text displayed is "Christine" directly below the rectangle 
 };
 
-window.onload = function draw_image(){
+function draw_image(){
 	var image_canvas = document.getElementbyId("image");
-	var image_context = image_canvas.getContext ("2d");
+	var image_context = image_canvas.getContext("2d");
 	var image_shoes = document.getElementbyId("shoes");
 	image_context.drawImage(shoes, 250, 100);
 };
@@ -111,7 +111,17 @@ window.onload = function draw_image(){
 
 </div>
 
+<canvas id= "name" width="350" height="200" style="border:1px solid #000000;">
+</canvas> <!-- canvas with border -->
+
+</div>
+
 <a onclick="draw_name()"; class="w3-btn w3-blue"> My Name! </a> <!-- button for my name to be displayed in canvas -->
+
+</div>
+
+<canvas id= "image" width="350" height="200" style="border:1px solid #000000;">
+</canvas> <!-- canvas with border -->
 
 </div>
 
